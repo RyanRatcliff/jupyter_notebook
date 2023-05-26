@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  jupyter:
+    image: ryanrratcliff/jupyter:latest
+    ports:
+      - 8888:8888
+    restart: always
+    volumes:
+      - /data/work:/home/jovyan
+      - $HOME/.aws:/home/jovyan/.aws
+      - $HOME/.ssh:/home/jovyan/.ssh
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+      NB_USER: "jovyan"
+      CHOWN_HOME: "yes"
+    command: start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''
+
