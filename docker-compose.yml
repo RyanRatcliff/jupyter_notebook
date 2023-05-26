@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   jupyter:
-    image: ryanrratcliff/jupyter:latest
+    image: ryanratcliff/jupyter:1.0.0
     ports:
       - 8888:8888
     restart: always
